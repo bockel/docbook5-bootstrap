@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0">
+    <info>
+        <title>My Article Title</title>
+        <author>
+            <personname>
+                <firstname>William</firstname>
+                <surname>Heinbockel</surname>
+            </personname>
+            <email>heinbockel@redhat.com</email>
+        </author>
+    </info>
+    <para>para1</para>
+    <para>para2</para>
+    <para>para3. See <command linkend="python.example">code example</command>.</para>
+    <example xml:id="python.example">
+        <title>Source code example</title>
+        <programlisting language="python"><![CDATA[
+import re, sys
+ex_re = re.compile(r'\<(\w+)(?:\s+[^\>]*)?\>')
+for i in sys.argv:
+    m = ex_re.match(i)
+    if(m):
+        print("Found %s"%(m.group(1)))
+]]></programlisting>
+    </example>
+    <para>Itemized list</para>
+    <itemizedlist mark="bullet">
+        <listitem>
+            <para>circle</para>
+        </listitem>
+        <listitem>
+            <para>rect</para>
+        </listitem>
+        <listitem>
+            <para>ellipse</para>
+            <itemizedlist>
+                <listitem>
+                    <para>oval</para>
+                </listitem>
+            </itemizedlist>
+        </listitem>
+    </itemizedlist>
+    <para>Ordered list</para>
+    <orderedlist numeration="arabic">
+        <listitem>
+            <para>circle</para>
+        </listitem>
+        <listitem>
+            <para>rect</para>
+        </listitem>
+        <listitem>
+            <para>ellipse</para>
+        </listitem>
+    </orderedlist>
+</article>
