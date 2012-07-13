@@ -1,0 +1,3 @@
+[submodule "share/xslt20"]
+	path = share/xslt20
+	url = https://github.com/docbook/xslt20-stylesheets

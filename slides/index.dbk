@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<slides xmlns="http://docbook.org/ns/docbook">
+    <!--<slidesinfo>
+        <title>DocBook <emphasis>slides</emphasis> Example</title>
+        <author>
+            <firstname>Michael</firstname>
+            <surname>Wiedmann</surname>
+        </author>
+        <date>2001-06-20</date>
+        <copyright>
+            <year>2001</year>
+            <holder>Michael Wiedmann</holder>
+        </copyright>
+        <abstract>
+            <para>
+                This is a very simple example for the use of the new DocBook
+                slides DTD (V2.0a1) and accompanying XSL stylesheets.
+            </para>
+
+            <para>
+                This is the <emphasis>frames</emphasis> version, but there is
+                also an XSL stylesheet for a non-framed version.
+            </para>
+            <para>
+                A very simple stylesheet for converting to <emphasis>Formatting Objects</emphasis>
+                for further procession using a FO-Processor is also included.
+            </para>
+        </abstract>
+        <legalnotice>
+            <title>Legal Notice</title>
+            <para>Some legal notice</para>
+        </legalnotice>
+    </slidesinfo>-->
+    <title>DocBook <emphasis>slides</emphasis> Example</title>
+
+    <foil>
+        <title>First Slide</title>
+        <itemizedlist>
+            <listitem>
+                <para>item 1</para>
+            </listitem>
+            <listitem>
+                <para>item 2</para>
+            </listitem>
+            <listitem>
+                <para>item 3</para>
+            </listitem>
+        </itemizedlist>
+    </foil>
+    <foil>
+        <title>Second Slide</title>
+        <variablelist>
+            <varlistentry>
+                <term>term 1</term>
+                <listitem>
+                    <para>description 1</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term>term 2</term>
+                <listitem>
+                    <para>description 2</para>
+                </listitem>
+            </varlistentry>
+            <varlistentry>
+                <term>term 3</term>
+                <listitem>
+                    <para>description 3</para>
+                </listitem>
+            </varlistentry>
+        </variablelist>
+    </foil>
+</slides>
