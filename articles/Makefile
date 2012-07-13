@@ -1,8 +1,8 @@
-SHAREDIR = ../share/xslt20/xslt/base
-DBK_HTML = $(SHAREDIR)/html/docbook.xsl
-DBK_FO = $(SHAREDIR)/fo/docbook.xsl
+SHAREDIR = $(HOME)/.docbook
+DBK_HTML = $(SHAREDIR)/xslt20/xslt/base/html/docbook.xsl
+DBK_FO = $(SHAREDIR)/xslt20/xslt/base/fo/docbook.xsl
 
-XSLPROC = ../xslt2proc
+XSLPROC = $(SHAREDIR)/xslt2proc
 OUTPATH = out/
 OUT_PDF = $(OUTPATH)pdf
 OUT_HTML = $(OUTPATH)html
@@ -17,8 +17,11 @@ outhtml:
 	@mkdir -p $(OUT_HTML)
 
 all: html pdf
-check:
-	xmllint --stream --xinclude --noout --relaxng ../share/docbook.rng $(FILES)
+check: $(SHAREDIR)/docbook.rng
+	xmllint --stream --xinclude --noout --relaxng $(SHAREDIR)/docbook.rng $(FILES)
+
+$(SHAREDIR)/docbook.rng: $(SHAREDIR)/xslt20/schemas/docbook.rnc
+	@trang $(SHAREDIR)/xslt20/schemas/docbook.rnc $(SHAREDIR)/docbook.rng
 
 %.html: %.dbk
 	$(XSLPROC) $(DBK_HTML) $(<) $(OUT_HTML)/$(@F)

@@ -24,9 +24,11 @@ Installation
 
         apt-get ...
 
-2. Run ``sh update.sh`` or update manually
+2. Clone the repository into ``$HOME/.docbook`` or softlink it using ``ln -s``
 
-3. *optional* Install OFFO hyphenation patterns for ``fop`` (only used for PDF
+3. Run ``sh update.sh`` or update manually
+
+4. *optional* Install OFFO hyphenation patterns for ``fop`` (only used for PDF
    generation): http://offo.sourceforge.net/hyphenation/index.html
 
 Manual Update
@@ -47,6 +49,26 @@ Manual Update
 
     cd xslt20
     ant
+
+Fedora & RHEL
+-------------
+
+On Fedora and RHEL, there is a missing jar that causes ``fop`` fail when
+processing SVG images.
+
+To fix:
+
+1. Download the **xml-commons-external-*-bin** binary package from
+   http://xerces.apache.org/mirrors.cgi
+
+2. Unarchive the downloaded package and copy the ``xml-apis-ext.jar`` file
+   ``/usr/share/java/`` or other location
+
+3. Update (or create) the ``$HOME/.foprc`` file to add the jar to the Java
+   CLASSPATH::
+
+    CLASSPATH=$CLASSPATH:/usr/share/java/xml-apis-ext.jar
+
 
 Creating DocBooks
 =================
