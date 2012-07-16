@@ -7,7 +7,7 @@ OUTPATH = out/
 OUT_PDF = $(OUTPATH)pdf
 OUT_HTML = $(OUTPATH)html
 
-FILES := $(wildcard *.dbk)
+FILES := $(wildcard *.xml)
 
 outpath:
 	@mkdir -p $(OUTPATH)
@@ -23,16 +23,16 @@ check: $(SHAREDIR)/docbook.rng
 $(SHAREDIR)/docbook.rng: $(SHAREDIR)/xslt20/schemas/docbook.rnc
 	@trang $(SHAREDIR)/xslt20/schemas/docbook.rnc $(SHAREDIR)/docbook.rng
 
-%.html: %.dbk
+%.html: %.xml
 	$(XSLPROC) $(DBK_HTML) $(<) $(OUT_HTML)/$(@F)
 %.pdf: %.fo
 	fop -l en_US $(OUT_PDF)/$(<F) -pdf $(OUT_PDF)/$(@F)
 	rm -f $(OUT_PDF)/$(<F)
-%.fo: %.dbk
+%.fo: %.xml
 	$(XSLPROC) $(DBK_FO) $(<) $(OUT_PDF)/$(@F)
 
-html: outhtml $(FILES:.dbk=.html)
-pdf: outpdf $(FILES:.dbk=.pdf)
+html: outhtml $(FILES:.xml=.html)
+pdf: outpdf $(FILES:.xml=.pdf)
 
 .PHONY: clean all
 

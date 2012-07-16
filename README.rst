@@ -5,12 +5,16 @@
 .. _trang: https://code.google.com/p/jing-trang/
 .. _docbook: http://docbook.org
 .. _DocBook5: http://www.docbook.org/specs/docbook-5.0-spec-cd-03.html
+.. _`Apache 2.0 License`: http://www.apache.org/licenses/LICENSE-2.0
 
 This is a bootstrap repository for developing and generating documents using
 docbook_.
 
 All document stubs and content are formatted using DocBook5_. Documents are
 generated using the DocBook5_ XSLT2.0 stylesheets.
+
+The contents of this repository are provided under the terms of the `Apache 2.0
+License`_.
 
 Installation
 ============
@@ -75,10 +79,10 @@ Creating DocBooks
 
 1. Use the **articles**, **book**, or **slides** directory contents based on
    whether you are building a docbook article, book, or set of slides. The
-   scripts assume that all docbook files end in a *.dbk* extension.
+   scripts assume that all docbook files end in a *.xml* extension.
 
    For books and slides, the makefiles assume that the top-level file is named
-   *index.dbk*
+   *index.xml*
 
 2. Write the contents according to the DocBook5_ specification
 
@@ -98,7 +102,7 @@ Makefile Usage
  generates both the html and pdf content
 
 ``make check``:
- validates the format of all of the *.dbk* files using an appropriate RelaxNG
+ validates the format of all of the *.xml* files using an appropriate RelaxNG
  schema
 
 ``make clean``:

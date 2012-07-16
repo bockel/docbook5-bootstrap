@@ -7,7 +7,7 @@ OUTPATH = out/
 OUT_PDF = $(OUTPATH)pdf
 OUT_HTML = $(OUTPATH)html
 
-FILES := $(wildcard *.dbk)
+FILES := $(wildcard *.xml)
 
 outpath:
 	@mkdir -p $(OUTPATH)
@@ -20,7 +20,7 @@ all: html pdf
 check: $(SHAREDIR)/slides-full.rng
 	xmllint --stream --xinclude --noout --relaxng $(SHAREDIR)/slides-full.rng $(FILES)
 
-%.html: %.dbk
+%.html: %.xml
 	$(XSLPROC) $(DBK_HTML) $(<) $(OUT_HTML)/$(@F)
 %.pdf: %.fo
 	fop -l en_US $(OUT_PDF)/$(<F) -pdf $(OUT_PDF)/$(@F)
@@ -28,8 +28,8 @@ check: $(SHAREDIR)/slides-full.rng
 %.fo: %.dbk
 	$(XSLPROC) $(DBK_FO) $(<) $(OUT_PDF)/$(@F)
 
-html: outhtml index.dbk
-	$(XSLPROC) $(DBK_HTML) index.dbk $(OUT_HTML)/slides.html
+html: outhtml index.xml
+	$(XSLPROC) $(DBK_HTML) index.xml $(OUT_HTML)/slides.html
 
 pdf: outpdf index.fo
 	fop -l en-US $(OUT_PDF)/index.fo -pdf $(OUT_PDF)/slides.pdf
