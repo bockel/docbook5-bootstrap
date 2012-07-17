@@ -34,7 +34,7 @@ limitations under the License.
     </info>
     <para>para1</para>
     <para>para2</para>
-    <para>para3. See <command linkend="python.example">code example</command>.</para>
+    <para>para3. See <xref xl:href="#python.example"/>.</para>
     <example xml:id="python.example">
         <title>Source code example</title>
         <programlisting language="python"><![CDATA[

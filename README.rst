@@ -1,7 +1,7 @@
 .. _SAXON: http://saxon.sourceforge.net/
 .. _ant: http://ant.apache.org/
 .. _fop: http://xmlgraphics.apache.org/fop/
-.. _libxml: http://xmlsoft.org/
+.. _jing: http://code.google.com/p/jing-trang/
 .. _trang: https://code.google.com/p/jing-trang/
 .. _docbook: http://docbook.org
 .. _DocBook5: http://www.docbook.org/specs/docbook-5.0-spec-cd-03.html
@@ -19,10 +19,10 @@ License`_.
 Installation
 ============
 
-1. Install dependencies (SAXON_, ant_, fop_, libxml_, trang_)
+1. Install dependencies (SAXON_, ant_, fop_, jing_, trang_)
     * On Fedora & RHEL::
 
-        sudo yum install -y saxon ant fop libxml trang
+        sudo yum install -y saxon ant fop jing trang
 
     * On Debian/Ubuntu::
 

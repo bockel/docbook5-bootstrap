@@ -1,3 +1,6 @@
 [submodule "share/xslt20"]
 	path = share/xslt20
 	url = https://github.com/docbook/xslt20-stylesheets
+[submodule "share/resources"]
+	path = share/resources
+	url = https://github.com/docbook/xslt20-resources.git

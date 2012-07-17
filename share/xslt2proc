@@ -1,11 +1,15 @@
 #!/bin/sh
 
-if [ "$#" -eq 3 ]; then
-    java -jar /usr/share/java/saxon.jar -xsl:"$1" -s:"$2" -o:"$3"
+if [ "$#" -ge 3 ]; then
+    xsl="$1"
+    src="$2"
+    out="$3"
+    shift 3
+    java -jar /usr/share/java/saxon.jar -xsl:"$xsl" -s:"$src" -o:"$out" "$@"
 elif [ "$#" -eq 2 ]; then
     java -jar /usr/share/java/saxon.jar -xsl:"$1" -s:"$2"
 else
-    echo "USAGE: $0 <xsl> <source> [<output>]"
+    echo "USAGE: $0 <xsl> <source> [<output>] [additional args]"
     exit 1
 fi
 
