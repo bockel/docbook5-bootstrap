@@ -24,12 +24,12 @@ all: html pdf $(EXT)
 check: $(SHAREDIR)/slides-full.rng $(EXT)
 	jing $(SHAREDIR)/slides-full.rng $(FILES)
 
-%.html: %.xml
+%.html: %.xml $(EXT)
 	$(XSLPROC) $(DBK_HTML) $(<) $(OUT_HTML)/$(@F) $(XSLARG)
 %.pdf: %.fo
 	fop -l en_US $(OUT_PDF)/$(<F) -pdf $(OUT_PDF)/$(@F)
 	rm -f $(OUT_PDF)/$(<F)
-%.fo: %.xml
+%.fo: %.xml $(EXT)
 	$(XSLPROC) $(DBK_FO) $(<) $(OUT_PDF)/$(@F) $(XSLARG)
 
 html: outhtml index.xml

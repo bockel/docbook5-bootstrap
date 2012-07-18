@@ -19,19 +19,19 @@ outpdf:
 outhtml:
 	@mkdir -p $(OUT_HTML)
 
-all: html pdf $(EXT)
+all: html pdf
 check: $(SHAREDIR)/docbook.rng $(EXT)
 	jing $(SHAREDIR)/docbook.rng $(FILES)
 
 $(SHAREDIR)/docbook.rng: $(SHAREDIR)/xslt20/schemas/docbook.rnc
 	@trang $(SHAREDIR)/xslt20/schemas/docbook.rnc $(SHAREDIR)/docbook.rng
 
-%.html: %.xml
+%.html: %.xml $(EXT)
 	$(XSLPROC) $(DBK_HTML) $(<) $(OUT_HTML)/$(@F) $(XSLARG)
 %.pdf: %.fo
 	fop $(OUT_PDF)/$(<F) -pdf $(OUT_PDF)/$(@F)
 	rm -f $(OUT_PDF)/$(<F)
-%.fo: %.xml
+%.fo: %.xml $(EXT)
 	$(XSLPROC) $(DBK_FO) $(<) $(OUT_PDF)/$(@F) $(XSLARG)
 
 html: outhtml $(FILES:.xml=.html)
