@@ -9,6 +9,7 @@ XSLARG += resource.slide=$(RSRC_BASE)/slides/
 OUTPATH = out/
 OUT_PDF = $(OUTPATH)pdf
 OUT_HTML = $(OUTPATH)html
+EXT = entities.txt
 
 FILES := $(wildcard *.xml)
 
@@ -19,8 +20,8 @@ outpdf:
 outhtml:
 	@mkdir -p $(OUT_HTML)
 
-all: html pdf
-check: $(SHAREDIR)/slides-full.rng
+all: html pdf $(EXT)
+check: $(SHAREDIR)/slides-full.rng $(EXT)
 	jing $(SHAREDIR)/slides-full.rng $(FILES)
 
 %.html: %.xml
@@ -38,8 +39,12 @@ pdf: outpdf index.fo
 	fop -l en-US $(OUT_PDF)/index.fo -pdf $(OUT_PDF)/slides.pdf
 	@rm -f index.fo
 
+$(EXT): $(SHAREDIR)/$(EXT)
+	@ln -s $(SHAREDIR)/$(EXT) $(EXT)
+
 .PHONY: clean all
 
 clean:
 	rm -rf $(OUTPATH)
+	rm -rf $(EXT)
 

@@ -8,6 +8,7 @@ XSLARG = resource.root=$(RSRC_BASE)/base/
 OUTPATH = out/
 OUT_PDF = $(OUTPATH)pdf
 OUT_HTML = $(OUTPATH)html
+EXT = entities.txt
 
 FILES := $(wildcard *.xml)
 
@@ -18,8 +19,8 @@ outpdf:
 outhtml:
 	@mkdir -p $(OUT_HTML)
 
-all: html pdf
-check: $(SHAREDIR)/docbook.rng
+all: html pdf $(EXT)
+check: $(SHAREDIR)/docbook.rng $(EXT)
 	jing $(SHAREDIR)/docbook.rng $(FILES)
 
 $(SHAREDIR)/docbook.rng: $(SHAREDIR)/xslt20/schemas/docbook.rnc
@@ -36,8 +37,12 @@ $(SHAREDIR)/docbook.rng: $(SHAREDIR)/xslt20/schemas/docbook.rnc
 html: outhtml $(FILES:.xml=.html)
 pdf: outpdf $(FILES:.xml=.pdf)
 
+$(EXT): $(SHAREDIR)/$(EXT)
+	@ln -s $(SHAREDIR)/$(EXT) $(EXT)
+
 .PHONY: clean all
 
 clean:
 	rm -rf $(OUTPATH)
+	rm -rf $(EXT)
 

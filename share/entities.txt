@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!ENTITY ndash  "&#150;">
+<!ENTITY mdash  "&#151;">
+<!ENTITY copy   "&#169;">
+<!ENTITY reg    "&#174;">
+<!ENTITY plusmn "&#177;">
+<!ENTITY para   "&#182;">
+<!ENTITY times  "&#215;">
+<!ENTITY divide "&#247;">
+<!ENTITY le    "&#8804;">
+<!ENTITY ge    "&#8805;">
