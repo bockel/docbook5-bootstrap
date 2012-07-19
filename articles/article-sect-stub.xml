@@ -42,14 +42,12 @@ limitations under the License.
         <para>para3. See <xref xlink:href="#python.example"/>.</para>
         <example xml:id="python.example">
             <title>Source code example</title>
-            <programlisting language="python"><![CDATA[
-    import re, sys
-    ex_re = re.compile(r'\<(\w+)(?:\s+[^\>]*)?\>')
-    for i in sys.argv:
-        m = ex_re.match(i)
-        if(m):
-            print("Found %s"%(m.group(1)))
-    ]]></programlisting>
+            <programlisting language="python"><![CDATA[import re, sys
+ex_re = re.compile(r'\<(\w+)(?:\s+[^\>]*)?\>')
+for i in sys.argv:
+    m = ex_re.match(i)
+    if(m):
+        print("Found %s"%(m.group(1)))]]></programlisting>
         </example>
     </section>
     <section>

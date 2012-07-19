@@ -16,8 +16,10 @@ outpath:
 	@mkdir -p $(OUTPATH)
 outpdf:
 	@mkdir -p $(OUT_PDF)
+	@ln -fs ../../img $(OUT_PDF)
 outhtml:
 	@mkdir -p $(OUT_HTML)
+	@ln -fs ../../img $(OUT_HTML)
 
 all: html pdf
 check: $(SHAREDIR)/docbook.rng $(EXT)

@@ -17,10 +17,12 @@ outpath:
 	@mkdir -p $(OUTPATH)
 outpdf:
 	@mkdir -p $(OUT_PDF)
+	@ln -fs ../../img $(OUT_PDF)
 outhtml:
 	@mkdir -p $(OUT_HTML)
+	@ln -fs ../../img $(OUT_HTML)
 
-all: html pdf $(EXT)
+all: html pdf
 check: $(SHAREDIR)/slides-full.rng $(EXT)
 	jing $(SHAREDIR)/slides-full.rng $(FILES)
 
@@ -32,7 +34,7 @@ check: $(SHAREDIR)/slides-full.rng $(EXT)
 %.fo: %.xml $(EXT)
 	$(XSLPROC) $(DBK_FO) $(<) $(OUT_PDF)/$(@F) $(XSLARG)
 
-html: outhtml index.xml
+html: outhtml index.xml $(EXT)
 	$(XSLPROC) $(DBK_HTML) index.xml $(OUT_HTML)/slides.html $(XSLARG)
 
 pdf: outpdf index.fo

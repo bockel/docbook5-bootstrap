@@ -71,6 +71,53 @@ limitations under the License.
         </variablelist>
     </foil>
     <foil>
+        <info>
+            <title>Examples</title>
+        </info>
+        <para>Example Table</para>
+        <table>
+            <caption>Table caption</caption>
+            <thead>
+                <tr>
+                    <td>col1</td>
+                    <td>col2</td>
+                    <td>col3</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>row1</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>row2</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>row3</td>
+                </tr>
+            </tbody>
+        </table>
+    </foil>
+    <foil>
+        <info>
+            <title>Examples</title>
+        </info>
+        <para>Example Image</para>
+        <mediaobject>
+            <imageobject>
+                <imagedata fileref="file:img/350x150.gif" format="GIF" align="center"/>
+            </imageobject>
+            <caption>
+                <para>Example Image</para>
+            </caption>
+        </mediaobject>
+    </foil>
+    <foil>
         <title>Questions?</title>
         <para>[Contact Info]</para>
     </foil>
