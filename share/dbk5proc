@@ -1,0 +1,21 @@
+#!/bin/sh
+
+DBK_JAR="$HOME/.docbook/xslt20/tools/lib"
+CP="$DBK_JAR/saxon9he.jar:$DBK_JAR/jython.jar:$DBK_JAR/xml-api.jar:$HOME/.docbook/xslt20/ext/build/lib/docbook-xsl2-saxon.jar"
+# CP="$DBK_JAR/saxon9he.jar:/usr/share/java/jython.jar:$DBK_JAR/xml-api.jar:$HOME/.docbook/xslt20/ext/build/lib/docbook-xsl2-saxon.jar"
+# CP="/usr/share/java/saxon.jar:/usr/share/java/batik-all.jar:$HOME/.docbook/xslt20/ext/build/lib/docbook-xsl2-saxon.jar"
+if [ "$#" -ge 3 ]; then
+    xsl="$1"
+    src="$2"
+    out="$3"
+    shift 3
+    # java -Dpython.path="$PYTHONPATH" -classpath "$CP" net.sf.saxon.Transform -xsl:"$xsl" -s:"$src" -o:"$out" -xi:on -ext:on -init:docbook.Initializer "$@"
+    java -Dpython.path="/usr/lib/python2.7/site-packages" -classpath "$CP" net.sf.saxon.Transform -xsl:"$xsl" -s:"$src" -o:"$out" -xi:on -ext:on -init:docbook.Initializer "$@"
+elif [ "$#" -eq 2 ]; then
+    # java -jar /usr/share/java/saxon.jar -xsl:"$1" -s:"$2"
+    java -classpath "$CP" net.sf.saxon.Transform -xsl:"$1" -s:"$2" -xi:on -ext:on -init:docbook.Initializer
+else
+    echo "USAGE: $0 <xsl> <source> [<output>] [additional args]"
+    exit 1
+fi
+

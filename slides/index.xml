@@ -118,6 +118,23 @@ limitations under the License.
         </mediaobject>
     </foil>
     <foil>
+        <info>
+            <title>Code Example</title>
+        </info>
+        <example>
+            <programlisting role="pygments" language="c" linenumbering="unnumbered"><![CDATA[#include <stdio.h>
+int
+main(int argc, char ** argv)
+{
+    char ** ptr = argv;
+    int i=1;
+    while(i < argc) {
+        fprintf(stderr,"arg[%d] = \"%s\"\n", i++, *(++ptr));
+    }
+    return 0;
+}]]></programlisting></example>
+    </foil>
+    <foil>
         <title>Questions?</title>
         <para>[Contact Info]</para>
     </foil>

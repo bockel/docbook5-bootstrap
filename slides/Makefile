@@ -3,7 +3,7 @@ DBK_HTML = $(SHAREDIR)/xslt20/xslt/slides/html/plain.xsl
 DBK_FO = $(SHAREDIR)/xslt20/xslt/slides/fo/plain.xsl
 RSRC_BASE = $(SHAREDIR)/resources
 
-XSLPROC = $(SHAREDIR)/xslt2proc
+XSLPROC = $(SHAREDIR)/dbk5proc
 XSLARG = resource.root=$(RSRC_BASE)/base/
 XSLARG += resource.slide=$(RSRC_BASE)/slides/
 OUTPATH = out/

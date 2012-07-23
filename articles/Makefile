@@ -3,7 +3,7 @@ DBK_HTML = $(SHAREDIR)/xslt20/xslt/base/html/docbook.xsl
 DBK_FO = $(SHAREDIR)/xslt20/xslt/base/fo/docbook.xsl
 RSRC_BASE = $(SHAREDIR)/resources
 
-XSLPROC = $(SHAREDIR)/xslt2proc
+XSLPROC = $(SHAREDIR)/dbk5proc
 XSLARG = resource.root=$(RSRC_BASE)/base/
 OUTPATH = out/
 OUT_PDF = $(OUTPATH)pdf
