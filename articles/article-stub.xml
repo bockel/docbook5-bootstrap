@@ -69,9 +69,6 @@ for i in sys.argv:
         <imageobject>
             <imagedata fileref="file:img/350x150.gif" format="GIF" align="center"/>
         </imageobject>
-        <textobject>
-            <para>Placeholder image [alt text]</para>
-        </textobject>
         <caption>
             <para>Example Image</para>
         </caption>

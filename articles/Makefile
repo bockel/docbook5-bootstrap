@@ -1,10 +1,10 @@
 SHAREDIR = $(HOME)/.docbook
-DBK_HTML = $(SHAREDIR)/xslt20/xslt/base/html/docbook.xsl
-DBK_FO = $(SHAREDIR)/xslt20/xslt/base/fo/docbook.xsl
+DBK_HTML = $(SHAREDIR)/html.xsl
+DBK_FO = $(SHAREDIR)/xslt/fo/docbook.xsl
 RSRC_BASE = $(SHAREDIR)/resources
 
-XSLPROC = $(SHAREDIR)/dbk5proc
-XSLARG = resource.root=$(RSRC_BASE)/base/
+XSLPROC = $(SHAREDIR)/dbk5proc.py
+XSLARG = resource.root=$(RSRC_BASE)
 OUTPATH = out/
 OUT_PDF = $(OUTPATH)pdf
 OUT_HTML = $(OUTPATH)html
@@ -24,9 +24,6 @@ outhtml:
 all: html pdf
 check: $(SHAREDIR)/docbook.rng $(EXT)
 	jing $(SHAREDIR)/docbook.rng $(FILES)
-
-$(SHAREDIR)/docbook.rng: $(SHAREDIR)/xslt20/schemas/docbook.rnc
-	@trang $(SHAREDIR)/xslt20/schemas/docbook.rnc $(SHAREDIR)/docbook.rng
 
 %.html: %.xml $(EXT)
 	$(XSLPROC) $(DBK_HTML) $(<) $(OUT_HTML)/$(@F) $(XSLARG)
