@@ -3,7 +3,7 @@
     <xsl:import href="xslt/html/docbook.xsl"/>
     <xsl:import href="xslt/html/highlight.xsl"/>
     <xsl:param name="highlight.source" select="1"/>
-    <xsl:output method="xhtml" omit-xml-declaration="yes"/>
+    <xsl:output method="html" omit-xml-declaration="yes"/>
     <xsl:template match="/" priority="1">
         <xsl:apply-templates/>
     </xsl:template>

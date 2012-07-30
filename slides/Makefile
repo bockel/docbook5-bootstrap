@@ -1,9 +1,9 @@
 SHAREDIR = $(HOME)/.docbook
-DBK_HTML = $(SHAREDIR)/xslt20/xslt/slides/html/plain.xsl
-DBK_FO = $(SHAREDIR)/xslt20/xslt/slides/fo/plain.xsl
+DBK_HTML = $(SHAREDIR)/slides-html.xsl
+DBK_FO = $(SHAREDIR)/xslt/slides/fo/plain.xsl
 RSRC_BASE = $(SHAREDIR)/resources
 
-XSLPROC = $(SHAREDIR)/dbk5proc
+XSLPROC = $(SHAREDIR)/dbk5proc.py
 XSLARG = resource.root=$(RSRC_BASE)/base/
 XSLARG += resource.slide=$(RSRC_BASE)/slides/
 OUTPATH = out/

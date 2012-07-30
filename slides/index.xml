@@ -110,7 +110,7 @@ limitations under the License.
         <para>Example Image</para>
         <mediaobject>
             <imageobject>
-                <imagedata fileref="file:img/350x150.gif" format="GIF" align="center"/>
+                <imagedata fileref="file:img/350x150.gif" format="GIF"/>
             </imageobject>
             <caption>
                 <para>Example Image</para>
@@ -121,7 +121,7 @@ limitations under the License.
         <info>
             <title>Code Example</title>
         </info>
-        <example>
+        <informalexample>
             <programlisting role="pygments" language="c" linenumbering="unnumbered"><![CDATA[#include <stdio.h>
 int
 main(int argc, char ** argv)
@@ -132,7 +132,7 @@ main(int argc, char ** argv)
         fprintf(stderr,"arg[%d] = \"%s\"\n", i++, *(++ptr));
     }
     return 0;
-}]]></programlisting></example>
+}]]></programlisting></informalexample>
     </foil>
     <foil>
         <title>Questions?</title>
