@@ -1,0 +1,74 @@
+pre.programlisting {
+    overflow: auto;
+    padding: 0.5em;
+    margin: 1em 0;
+}
+p {
+    line-height: 1.638em;
+    padding: 0.335em 0;
+}
+.programlisting, .varname, .type,
+.code, .function, .command,
+.term, code, pre {
+    font-family:
+             "Liberation Mono",
+             "DejaVu Sans Mono",
+             Consolas,
+             monospace;
+}
+pre {
+    display: block;
+    text-align: left;
+}
+.emphasis, .firstterm {
+    font-weight: bold;
+}
+dl > dt {
+    font-weight: bold;
+    font-size: 120%;
+    margin-left: -0.5em;
+}
+dl > dd {
+    margin-left: 0.1em;
+}
+
+.mediaobject {
+    display: block;
+    text-align: center;
+}
+.inlinemediaobject {
+    display: inline-block;
+}
+.caption {
+    margin-top: -1em;
+    font-size: 0.8em;
+}
+blockquote {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    padding-left: 1em;
+    font-style: italic;
+    position: relative;
+    border-left: 4px solid rgba(170,170,170,0.7);
+    margin: 1em 0;
+}
+blockquote .cite {
+    font-style: italic;
+    margin: -0.5em 1em 0.1em 1em;
+    text-align: right;
+}
+blockquote .cite:before {
+    content: '\2014';
+    padding: 0 0.3em;
+    color: #aaaaaa;
+}
+
+.orderedlist {
+    list-style: decimal outside;
+    margin-left: 1em;
+}
+
+.itemizedlist {
+    list-style: square outside;
+    margin-left: 1em;
+}

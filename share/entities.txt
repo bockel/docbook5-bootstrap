@@ -9,3 +9,5 @@
 <!ENTITY divide "&#247;">
 <!ENTITY le    "&#8804;">
 <!ENTITY ge    "&#8805;">
+<!ENTITY larr  "&#8592;">
+<!ENTITY rarr  "&#8594;">

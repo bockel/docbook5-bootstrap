@@ -171,40 +171,15 @@ version='1.0'>
     <xsl:call-template name="id.attribute"/>
     <xsl:call-template name="anchor"/>
 
-    <xsl:choose>
-      <xsl:when test="d:attribution">
-        <table border="{$table.border.off}" class="blockquote">
-          <xsl:if test="$css.decoration != 0">
-            <xsl:attribute name="style">
-              <xsl:text>width: 100%; cellspacing: 0; cellpadding: 0;</xsl:text>
-            </xsl:attribute>
-          </xsl:if>
-          <xsl:if test="$div.element != 'section'">
-            <xsl:attribute name="summary">Block quote</xsl:attribute>
-          </xsl:if>
-          <tr>
-            <td width="10%" valign="top">&#160;</td>
-            <td width="80%" valign="top">
-              <xsl:apply-templates select="child::*[local-name(.)!='attribution']"/>
-            </td>
-            <td width="10%" valign="top">&#160;</td>
-          </tr>
-          <tr>
-            <td width="10%" valign="top">&#160;</td>
-            <td colspan="2" align="{$direction.align.end}" valign="top">
-              <xsl:text>--</xsl:text>
+    <blockquote>
+      <xsl:call-template name="common.html.attributes"/>
+      <xsl:apply-templates select="child::*[local-name(.)!='attribution']"/>
+      <xsl:if test="d:attribution">
+          <div class="cite">
               <xsl:apply-templates select="d:attribution"/>
-            </td>
-          </tr>
-        </table>
-      </xsl:when>
-      <xsl:otherwise>
-        <blockquote>
-          <xsl:call-template name="common.html.attributes"/>
-          <xsl:apply-templates/>
-        </blockquote>
-      </xsl:otherwise>
-    </xsl:choose>
+          </div>
+      </xsl:if>
+    </blockquote>
   </div>
 </xsl:template>
 

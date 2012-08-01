@@ -1,0 +1,105 @@
+@import url(./highlight-default.css);
+body {
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.4;
+}
+body.fullScreen {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+#preso a,
+#preso a:visited,
+#preso a:link {
+    color: #6D4927;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid #6D4927;
+}
+
+/* Style for individual slides */
+#preso .slidetitle {
+    min-height: 2em;
+    font-size: 200%;
+    line-height: 1em;
+}
+#preso .title {
+    display: block;
+    margin: 1em -1.5em;
+    opacity: 0.7;
+    filter:alpha(opacity=70);
+    -moz-opacity:0.7;
+    -khtml-opacity: 0.7;
+    min-height: 1em;
+    font-size: 160%;
+}
+
+#preso .title h1 {
+    padding: 0.1em 1em;
+    color: #fff;
+    background-color: #000;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    text-align: left;
+}
+
+#preso .subtitle {
+    display: block;
+    position: relative;
+    clear: both;
+    margin: -0.5em 0 1em 1em;
+    text-align: left;
+    font-size: 150%;
+    font-style: italic;
+    color: #fff;
+}
+
+#preso code {
+    font-size: inherit;
+    padding: 0.1em;
+    border: 1px dashed #65aaba;
+    background-color: #eee;
+    color: #000;
+}
+
+#preso ul ul,
+#preso ol ul,
+#preso ul ol,
+#preso ol ol {
+    margin-top: -0.4em;
+}
+#preso ul ul p,
+#preso ol ul p,
+#preso ul ol p,
+#preso ol ol p {
+    padding: 0 0 0 0.6em;
+}
+
+/* Slide style */
+#preso, .slide {
+    font-family: "helvetica neue","helvetica","lucida grande",arial,sans-serif;
+    color: #fff;
+    background-color: #65aaba;
+    font-size: 32px;
+}
+#preso .content {
+    margin: 0 4em;
+}
+#preso img {
+    padding: 0.1em;
+    margin: 1em auto;
+    box-shadow: #666 0 3px 5px;
+    -webkit-box-shadow: #666 0 3px 5px;
+    -moz-box-shadow: #666 0 3px 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    background-color: #fff;
+    padding: 15px;
+}
+
