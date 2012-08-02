@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:str="http://exslt.org/strings" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:d="http://docbook.org/ns/docbook" version="1.0" exclude-result-prefixes="xhtml d">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:d="http://docbook.org/ns/docbook" version="1.0" exclude-result-prefixes="xhtml d">
     <xsl:import href="html.xsl"/>
     <xsl:param name="resource.root" select="'.'"/>
     <xsl:param name="intro.sect" select="'Intro'"/>
     <xsl:param name="theme.name" select="'default'"/>
-    <xsl:output method="html" encoding="UTF-8" indent="no"/>
+    <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
 
     <xsl:template name="add.slide.htmlheader">
         <link rel="stylesheet" href="{$resource.root}/css/reset.css" type="text/css"/>
@@ -23,11 +23,10 @@
         <script type="text/javascript" src="{$resource.root}/js/core.js"></script>
         <script type="text/javascript" src="{$resource.root}/js/showoffcore.js"></script>
 
-        <link type="text/css" href="{$resource.root}/css/fg.menu.css" media="screen" rel="stylesheet" />
-        <link type="text/css" href="{$resource.root}/css/theme/ui.all.css" media="screen" rel="stylesheet" />
-        <link type="text/css" href="{$resource.root}/themes/theme.{$theme.name}.css" media="screen" rel="stylesheet" />
-        <link type="text/css" href="{$resource.root}/themes/docbook.css" rel="stylesheet"/>
-        <!--<link type="text/css" href="{$resource.root}/themes/highlight-solarized.css" media="screen" rel="stylesheet" />-->
+        <link type="text/css" href="{$resource.root}/css/fg.menu.css" media="screen" rel="stylesheet"></link>
+        <link type="text/css" href="{$resource.root}/css/theme/ui.all.css" rel="stylesheet"></link>
+        <link type="text/css" href="{$resource.root}/themes/theme.{$theme.name}.css" rel="stylesheet"></link>
+        <link type="text/css" href="{$resource.root}/themes/docbook.css" rel="stylesheet"></link>
 
         <script type="text/javascript">
         $(function(){
@@ -74,19 +73,19 @@
             <div class="content" ref="{$intro.sect}/title">
                 <div class="slidetitle">
                     <h1><xsl:value-of select="d:title"/></h1>
+                    <table class="slideauthors">
+                        <tr>
+                            <xsl:for-each select="d:author">
+                                <td class="slideauthor">
+                                    <xsl:value-of select="concat(d:personname/d:firstname,' ',d:personname/d:surname)"/>
+                                    <xsl:if test="d:email">
+                                        <div class="email"><xsl:value-of select="d:email"/></div>
+                                    </xsl:if>
+                                </td>
+                            </xsl:for-each>
+                        </tr>
+                    </table>
                 </div>
-                <table>
-                    <tr>
-                        <xsl:for-each select="d:author">
-                            <td><div class="slideauthor">
-                                <xsl:value-of select="concat(d:personname/d:firstname,' ',d:personname/d:surname)"/>
-                                <xsl:if test="d:email">
-                                    <div class="email"><xsl:value-of select="d:email"/></div>
-                                </xsl:if>
-                            </div></td>
-                        </xsl:for-each>
-                    </tr>
-                </table>
             </div>
         </div>
     </xsl:template>
@@ -126,7 +125,9 @@
         </xsl:variable>
         <div class="slide titleslide">
             <div class="content" ref="{concat($ref,'/slide0')}">
-                <xsl:apply-templates select="d:info|d:title"/>
+                <div class="title">
+                    <xsl:apply-templates select="d:info|d:title|d:subtitle"/>
+                </div>
             </div>
         </div>
         <xsl:apply-templates select="d:foil">
@@ -138,7 +139,10 @@
         <xsl:variable name="ref" select="concat('slide',count(preceding-sibling::d:foil)+1)"/>
         <div class="slide">
             <div class="content" ref="{concat($parent,$ref)}">
-                <xsl:apply-templates/>
+                <div class="title">
+                    <xsl:apply-templates select="d:info|d:title|d:subtitle"/>
+                </div>
+                <xsl:apply-templates select="*[local-name()!='info' and local-name()!='title' and local-name()!='subtitle']"/>
             </div>
         </div>
     </xsl:template>
@@ -147,11 +151,9 @@
     </xsl:template>
     <xsl:template match="d:foil/d:info/d:title|d:foil/d:title
                         |d:foilgroup/d:info/d:title|d:foilgroup/d:title">
-        <div class="{name()}">
-            <xsl:if test="string-length(.) &gt; 0">
-                <h1><xsl:value-of select="."/></h1>
-            </xsl:if>
-        </div>
+        <xsl:if test="string-length(.) &gt; 0">
+            <h1><xsl:value-of select="."/></h1>
+        </xsl:if>
     </xsl:template>
     <xsl:template match="d:foil/d:info/d:subtitle|d:foil/d:subtitle
                         |d:foilgroup/d:info/d:subtitle|d:foilgroup/d:subtitle">

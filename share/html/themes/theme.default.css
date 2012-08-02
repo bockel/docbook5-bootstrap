@@ -12,6 +12,10 @@ body.fullScreen {
     -o-background-size: cover;
     background-size: cover;
 }
+#preso pre {
+    overflow: hidden;
+    margin: 0;
+}
 #preso a,
 #preso a:visited,
 #preso a:link {
@@ -22,37 +26,51 @@ body.fullScreen {
 }
 
 /* Style for individual slides */
-#preso .slidetitle {
-    min-height: 2em;
-    font-size: 200%;
-    line-height: 1em;
+#preso .slideauthors {
+    text-align: right;
+    margin: 1em 0 0 auto;
 }
-#preso .title {
-    display: block;
-    margin: 1em -1.5em;
-    opacity: 0.7;
-    filter:alpha(opacity=70);
-    -moz-opacity:0.7;
-    -khtml-opacity: 0.7;
-    min-height: 1em;
-    font-size: 160%;
+#preso .titleslide .title,
+#preso .slidetitle {
+    top: 50% !important;
+    position: absolute !important;
+    display: table-cell;
+    vertical-align: middle;
+    width: 67%;
+}
+#preso .slidetitle h1 {
+    min-height: 2em;
+    font-size: 200% !important;
 }
 
+#preso .title {
+    left: 15%;
+}
+
+#preso .slidetitle h1,
 #preso .title h1 {
-    padding: 0.1em 1em;
+    min-height: 1em;
+    padding: 0.5em 1em;
+    margin: 0.5em -1em;
+    font-size: 180%;
     color: #fff;
     background-color: #000;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     text-align: left;
+    display: block;
+    /*opacity: 0.7;*/
+    /*filter:alpha(opacity=70);*/
+    /*-moz-opacity:0.7;*/
+    /*-khtml-opacity: 0.7;*/
 }
 
 #preso .subtitle {
     display: block;
     position: relative;
     clear: both;
-    margin: -0.5em 0 1em 1em;
+    margin: 0 0 1em 2em;
     text-align: left;
     font-size: 150%;
     font-style: italic;
@@ -82,20 +100,25 @@ body.fullScreen {
 
 /* Slide style */
 #preso, .slide {
-    font-family: "helvetica neue","helvetica","lucida grande",arial,sans-serif;
+    font-family: "Liberation Sans",arial,sans-serif;
     color: #fff;
     background-color: #65aaba;
-    font-size: 32px;
+    /*font-size: 32px;*/
+    font-size: 150%;
+    padding-bottom: -24px;
+    /*-webkit-box-shadow:0 0 25px rgba(0,0,0,0.35);*/
+    /*-moz-box-shadow:0 0 25px rgba(0,0,0,0.35);*/
+    /*box-shadow:0 0 25px rgba(0,0,0,0.35);*/
 }
 #preso .content {
-    margin: 0 4em;
+    margin: 1em 15%;
 }
 #preso img {
     padding: 0.1em;
     margin: 1em auto;
-    box-shadow: #666 0 3px 5px;
-    -webkit-box-shadow: #666 0 3px 5px;
-    -moz-box-shadow: #666 0 3px 5px;
+    /*box-shadow: #666 0 3px 5px;*/
+    /*-webkit-box-shadow: #666 0 3px 5px;*/
+    /*-moz-box-shadow: #666 0 3px 5px;*/
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;

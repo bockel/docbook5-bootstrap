@@ -1,4 +1,4 @@
-@media screen {
+/*@media screen {*/
   body {
       font-size: 100%;
       font-family: "Gill Sans", Helvetica, Arial, sans-serif;
@@ -10,33 +10,34 @@
 
   #preso, .slide {
       background: #fff;
-      width: 1024px;
-      height: 768px;
+      width: 100% !important;
+      height: 98% !important;
+      /*width: 1024px;*/
+      /*height: 740px;*/
       margin-left:auto;
       margin-right:auto;
       overflow:hidden;
-      -webkit-box-shadow:0 0 25px rgba(0,0,0,0.35);
-      -moz-box-shadow:0 0 25px rgba(0,0,0,0.35);
-      box-shadow:0 0 25px rgba(0,0,0,0.35);
   }
 
   #footer {
       background: rgba(221,221,221,0.75);
       color:#333;
-      padding: 2px 5px;
-      width: 1005px;
-      height: 20px;
-      line-height:20px;
+      padding: 0 3em;
+      width: 100%;
+      height: 2% !important;
+      /*max-height: 24px;*/
       font-size:14px;
       position:relative;
-      top:-24px;
+      /*line-height:20px;*/
+      /*top:-24px;*/
+      /*bottom:4em;*/
       margin:0 auto;
-      -webkit-border-top-left-radius: 3px;
-      -webkit-border-top-right-radius: 3px;
-      -moz-border-radius-topleft: 3px;
-      -moz-border-radius-topright: 3px;
-      border-top-left-radius: 3px;
-      border-top-right-radius: 3px;
+      /*-webkit-border-top-left-radius: 3px;*/
+      /*-webkit-border-top-right-radius: 3px;*/
+      /*-moz-border-radius-topleft: 3px;*/
+      /*-moz-border-radius-topright: 3px;*/
+      /*border-top-left-radius: 3px;*/
+      /*border-top-right-radius: 3px;*/
       z-index: 2147483647; /* max, see http://www.puidokas.com/max-z-index/ */
   }
   #pauseScreen {
@@ -54,7 +55,7 @@
       z-index: 2147483647; /* max, see http://www.puidokas.com/max-z-index/ */
       text-align: center;
   }
-}
+/*}*/
 
 /* iPhone */
 /* Portrait */
@@ -107,8 +108,8 @@
 }
 
 .slide .center {
-  height: 740px;
-  width: 1020px;
+  height: 100%;
+  width: 100%;
   display: table-cell;
   text-align: center;
   vertical-align: middle;
@@ -286,6 +287,7 @@ table {
 }
 
 /** Print **/
+/*
 @media print {
   body {
     font-size: 70%;
@@ -325,3 +327,4 @@ table {
     font-family: Monaco, monospace;
   }
 }
+    */
