@@ -40,6 +40,7 @@ def main(xslt_file,xml_file,out_file,args):
     xml_p = etree.XMLParser(remove_blank_text=True, resolve_entities=True, load_dtd=True)
     transform = etree.XSLT(etree.parse(xslt_file, xml_p))
     document = etree.parse(xml_file, xml_p)
+    document.xinclude()
     out_file.write(str(transform(document, **xslt_params)))
     return 0
 

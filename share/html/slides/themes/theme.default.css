@@ -32,7 +32,7 @@ body.fullScreen {
 }
 #preso .titleslide .title,
 #preso .slidetitle {
-    top: 50% !important;
+    top: 25% !important;
     position: absolute !important;
     display: table-cell;
     vertical-align: middle;

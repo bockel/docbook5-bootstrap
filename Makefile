@@ -16,9 +16,9 @@ all: html pdf
 check: check-docbook check-slides
 
 check-docbook: $(EXT)
-	jing $(SHAREDIR)/docbook.rng $(FILES)
+	jing $(SHAREDIR)/docbook.rng $(ARTICLES)
 check-slides: $(EXT)
-	jing $(SHAREDIR)/docbook-slides.rng $(FILES)
+	jing $(SHAREDIR)/docbook-slides.rng $(SLIDES)
 
 html: outhtml html-slides html-article
 html-article: $(EXT) $(ARTICLES:.xml=.html)
