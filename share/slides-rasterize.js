@@ -13,7 +13,7 @@ function renderNextSlide(head, slidenum, total) {
         page.release
         page.evaluate(function() { nextStep(); });
         renderNextSlide(head,slidenum+1, total);
-    }, 1000);
+    }, 2000);
 }
 
 if (phantom.args.length < 3) {

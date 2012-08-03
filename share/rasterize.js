@@ -1,14 +1,16 @@
 var page = new WebPage(),
     address, output, size;
 
-if (phantom.args.length < 3) {
-    console.log('Usage: rasterize.js URL fileheader outname');
+if (phantom.args.length < 2) {
+    console.log('Usage: rasterize.js input.html output');
     phantom.exit();
 } else {
     var address = phantom.args[0];
     var outname = phantom.args[1];
 
-    page.viewportSize = { width: 1024, height: 768 };
+    // assume 90 dpi
+    page.viewportSize = { width: 90*8.5, height: 90*11 };
+    page.paperSize = { format:'letter',orientation:'portrait',border:'1in' };
 
     page.open(address, function (status) {
         if (status !== 'success') {

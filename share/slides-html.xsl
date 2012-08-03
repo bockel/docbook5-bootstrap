@@ -2,31 +2,30 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:d="http://docbook.org/ns/docbook" version="1.0" exclude-result-prefixes="xhtml d">
     <xsl:import href="html.xsl"/>
     <xsl:param name="resource.root" select="'.'"/>
+    <xsl:param name="slide.root" select="$resource.root/slides"/>
     <xsl:param name="intro.sect" select="'Intro'"/>
     <xsl:param name="theme.name" select="'default'"/>
-    <xsl:output method="xhtml" encoding="UTF-8" indent="no"/>
+    <xsl:output method="html" encoding="UTF-8" indent="no"/>
 
     <xsl:template name="add.slide.htmlheader">
-        <link rel="stylesheet" href="{$resource.root}/css/reset.css" type="text/css"/>
-        <link rel="stylesheet" href="{$resource.root}/css/showoff.css" type="text/css"/>
+        <link rel="stylesheet" href="{$slide.root}/css/reset.css" type="text/css"/>
+        <link rel="stylesheet" href="{$slide.root}/css/showoff.css" type="text/css"/>
 
-        <script type="text/javascript" src="{$resource.root}/js/jquery-1.4.2.min.js"></script>
-        <script type="text/javascript" src="{$resource.root}/js/jquery.cycle.all.js"></script>
-        <script type="text/javascript" src="{$resource.root}/js/jquery-print.js"></script>
-        <script type="text/javascript" src="{$resource.root}/js/jquery.batchImageLoad.js"></script>
+        <script type="text/javascript" src="{$slide.root}/js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="{$slide.root}/js/jquery.cycle.all.js"></script>
+        <script type="text/javascript" src="{$slide.root}/js/jquery-print.js"></script>
+        <script type="text/javascript" src="{$slide.root}/js/jquery.batchImageLoad.js"></script>
+        <script type="text/javascript" src="{$slide.root}/js/jquery.doubletap-0.1.js"></script>
+        <script type="text/javascript" src="{$slide.root}/js/fg.menu.js"></script>
+        <script type="text/javascript" src="{$slide.root}/js/showoff.js"></script>
+        <script type="text/javascript" src="{$slide.root}/js/jTypeWriter.js"> </script>
+        <script type="text/javascript" src="{$slide.root}/js/core.js"></script>
+        <script type="text/javascript" src="{$slide.root}/js/showoffcore.js"></script>
 
-        <script type="text/javascript" src="{$resource.root}/js/jquery.doubletap-0.1.js"></script>
-
-        <script type="text/javascript" src="{$resource.root}/js/fg.menu.js"></script>
-        <script type="text/javascript" src="{$resource.root}/js/showoff.js"></script>
-        <script type="text/javascript" src="{$resource.root}/js/jTypeWriter.js"> </script>
-        <script type="text/javascript" src="{$resource.root}/js/core.js"></script>
-        <script type="text/javascript" src="{$resource.root}/js/showoffcore.js"></script>
-
-        <link type="text/css" href="{$resource.root}/css/fg.menu.css" media="screen" rel="stylesheet"></link>
-        <link type="text/css" href="{$resource.root}/css/theme/ui.all.css" rel="stylesheet"></link>
-        <link type="text/css" href="{$resource.root}/themes/theme.{$theme.name}.css" rel="stylesheet"></link>
-        <link type="text/css" href="{$resource.root}/themes/docbook.css" rel="stylesheet"></link>
+        <link type="text/css" href="{$slide.root}/css/fg.menu.css" media="screen" rel="stylesheet"></link>
+        <link type="text/css" href="{$slide.root}/css/theme/ui.all.css" media="screen" rel="stylesheet"></link>
+        <link type="text/css" href="{$slide.root}/themes/theme.{$theme.name}.css" rel="stylesheet"></link>
+        <link type="text/css" href="{$resource.root}/docbook.css" rel="stylesheet"></link>
 
         <script type="text/javascript">
         $(function(){

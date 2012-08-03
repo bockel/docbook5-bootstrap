@@ -191,6 +191,7 @@ function showSlide(back_step) {
     if (back_step || fullPage) {
         transition = 'none'
     }
+    //transition = 'none'
 
     $('#preso').cycle(slidenum, transition)
 

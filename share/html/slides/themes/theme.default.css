@@ -1,4 +1,4 @@
-@import url(./highlight-default.css);
+@import url(../../highlight-default.css);
 body {
     -webkit-font-smoothing: antialiased;
     line-height: 1.4;
@@ -45,16 +45,16 @@ body.fullScreen {
 
 #preso .title {
     left: 15%;
+    min-height: 2em;
 }
 
 #preso .slidetitle h1,
 #preso .title h1 {
-    min-height: 1em;
     padding: 0.5em 1em;
     margin: 0.5em -1em;
     font-size: 180%;
     color: #fff;
-    background-color: #000;
+    background-color: #333;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -98,6 +98,7 @@ body.fullScreen {
     padding: 0 0 0 0.6em;
 }
 
+
 /* Slide style */
 #preso, .slide {
     font-family: "Liberation Sans",arial,sans-serif;
@@ -105,7 +106,7 @@ body.fullScreen {
     background-color: #65aaba;
     /*font-size: 32px;*/
     font-size: 150%;
-    padding-bottom: -24px;
+    /*padding-bottom: -24px;*/
     /*-webkit-box-shadow:0 0 25px rgba(0,0,0,0.35);*/
     /*-moz-box-shadow:0 0 25px rgba(0,0,0,0.35);*/
     /*box-shadow:0 0 25px rgba(0,0,0,0.35);*/
