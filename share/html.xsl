@@ -3,5 +3,7 @@
     <xsl:import href="xslt/html/docbook.xsl"/>
     <xsl:import href="xslt/html/highlight.xsl"/>
     <xsl:param name="highlight.source" select="1"/>
+    <xsl:param name="generate.css.header" select="1"/>
+    <xsl:param name="docbook.css.link" select="1"/>
     <xsl:output method="html" encoding="UTF-8" indent="no"/>
 </xsl:stylesheet>

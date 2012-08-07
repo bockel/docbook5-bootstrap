@@ -1,0 +1,69 @@
+@import url(file:../../docbook.css);
+@import url(file:../../highlight-solarized-dark.css);
+.toc {
+    float: right;
+    padding: 0.5em;
+    border: 1px dashed gray;
+    max-width: 30%;
+    margin: 0.5em;
+    counter-reset: sectioncounter;
+}
+.toc p {
+    font-style: italic;
+    margin: 0;
+}
+.toc dl {
+    margin-left: 1em;
+    font-size: 0.9em;
+}
+.toc dt {
+    margin: 0.3em 0;
+}
+.toc + * {
+    counter-reset: sectioncounter;
+}
+blockquote {
+    margin: 0 10%;
+}
+.article {
+    margin: 1em;
+}
+.programlisting {
+    padding: 0.2em;
+    margin: 1em 5em !important;
+}
+.programlisting,
+.mediaobject > img,
+.mediaobject > object {
+    border: 1px solid #2e2e2e;
+    -moz-box-shadow: 6px 6px 5px 3px #aaa;
+    -webkit-box-shadow: 6px 6px 5px 3px #aaa;
+    box-shadow: 6px 6px 5px 3px #aaa;
+}
+img, object {
+    background-color: #fff;
+}
+body {
+    background-color: #eee8d5;
+    color: #2e2e2e;
+}
+.article > .section {
+    counter-reset: subsectcounter;
+}
+.article > .section h2:before,
+.toc > dl > dt a:before {
+    content: counter(sectioncounter) ". ";
+    counter-increment: sectioncounter;
+}
+.article > .section > .section h3:before {
+    content: counter(sectioncounter) "." counter(subsectcounter) ". ";
+    counter-increment: subsectcounter;
+}
+
+/*
+p > code {
+    padding: 0.1em;
+    background-color: #002b36 !important;
+    color: #93A1A1;
+}
+*/

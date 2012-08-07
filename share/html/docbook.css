@@ -7,6 +7,11 @@ p {
     line-height: 1.638em;
     padding: 0.335em 0;
 }
+li > p, dd > p,
+dt > p {
+    padding: inherit;
+    line-height: inherit;
+}
 .programlisting, .varname, .type,
 .code, .function, .command,
 .term, code, pre {
@@ -15,6 +20,7 @@ p {
              "DejaVu Sans Mono",
              Consolas,
              monospace;
+    font-size: 1.1em;
 }
 pre {
     display: block;
@@ -39,9 +45,9 @@ dl > dd {
 .inlinemediaobject {
     display: inline-block;
 }
-.caption {
-    margin-top: -1em;
-    font-size: 0.8em;
+.caption p {
+    line-height: 1em;
+    font-size: 0.9em;
 }
 blockquote {
     font-size: 1.2em;
