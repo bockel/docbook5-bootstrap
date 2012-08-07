@@ -26,11 +26,13 @@ blockquote {
     margin: 0 10%;
 }
 .article {
-    margin: 1em;
+    padding: 1em;
+    max-width: 700px;
+    margin: 0 auto;
 }
 .programlisting {
     padding: 0.2em;
-    margin: 1em 5em !important;
+    margin: 1em 2em !important;
 }
 .programlisting,
 .mediaobject > img,
@@ -67,3 +69,45 @@ p > code {
     color: #93A1A1;
 }
 */
+@media print {
+body {
+    background-color: #fff !important;
+    color: #000 !important;
+    font-size: 12px;
+}
+.programlisting,
+.mediaobject > img,
+.mediaobject > object {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+.article {
+    width: 100%;
+    max-width: 100%;
+}
+pre {
+    overflow: visible;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -o-pre-wrap;
+    white-space: -pre-wrap;
+    word-wrap: break-word;
+}
+.toc {
+    display: none;
+}
+pre span {
+    color: #000 !important;
+}
+a:link, a:hover, a:visited, a:active {
+    color: #000;
+    text-decoration: none;
+}
+p a:before {
+    content: "[";
+}
+p a:after {
+    content: " " attr(href) "]"
+}
+}
