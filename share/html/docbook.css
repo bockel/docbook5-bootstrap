@@ -22,6 +22,9 @@ dt > p {
              monospace;
     font-size: 1.1em;
 }
+.citetitle {
+    font-style: italic;
+}
 pre {
     display: block;
     text-align: left;

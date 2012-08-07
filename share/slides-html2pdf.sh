@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ "$#" != 2 ]
+then echo "USAGE: $0 <rasterize.js> <infile.html>"
+    exit 1
+fi
 tmpdir=`mktemp -d --tmpdir=.`
 cd "$tmpdir"
 phantomjs "$1" "../$2" "${2%.*}" png

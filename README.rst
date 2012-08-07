@@ -26,7 +26,7 @@ Installation
 1. Install dependencies (libxml_, libxslt_, jing_, python_ with lxml_, cssutils_ modules)
     * On Fedora & RHEL::
 
-        sudo yum install -y libxml libxslt jing trang python python-lxml python-cssutils
+        sudo yum install -y libxml libxslt jing python python-lxml python-cssutils optipng
 
     * On Debian/Ubuntu::
 

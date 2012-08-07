@@ -5,7 +5,7 @@
     padding: 0.5em;
     border: 1px dashed gray;
     max-width: 30%;
-    margin: 0.5em;
+    margin: 0.5em 1em;
     counter-reset: sectioncounter;
 }
 .toc p {
@@ -23,7 +23,10 @@
     counter-reset: sectioncounter;
 }
 blockquote {
-    margin: 0 10%;
+    margin: 0 2em;
+}
+blockquote em {
+    font-style: normal !important;
 }
 .article {
     padding: 1em;
